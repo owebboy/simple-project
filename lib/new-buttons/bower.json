@@ -1,0 +1,23 @@
+{
+  "name": "new-buttons",
+  "version": "1.0.4",
+  "homepage": "https://github.com/owebboy/new-buttons",
+  "authors": [
+    "Oliver Pope <opope@me.com>"
+  ],
+  "description": "A collection of brand new buttons that make the web look epic",
+  "main": "css/new-buttons.css",
+  "keywords": [
+    "buttons",
+    "stylus",
+    "stylesheet"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

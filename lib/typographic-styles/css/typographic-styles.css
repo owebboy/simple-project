@@ -1,0 +1,80 @@
+/*
+
+	Typographic Styles
+	@owebboy
+	
+*/
+html {
+  font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+  color: #666;
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+p {
+  font-weight: 400;
+  font-size: 1em;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ccc;
+}
+a:hover {
+  border-color: #666;
+  color: #000;
+}
+code {
+  font-size: 0.9em;
+  font-family: Menlo, Consolas, Monaco, "Lucida Console", monospace;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #666;
+  font-weight: 700;
+}
+.title {
+  text-transform: uppercase;
+  margin: 0;
+  font-weight: 900;
+  font-size: 2em;
+}
+h1 {
+  font-size: 2em;
+  margin: 0.2em 0;
+}
+h2 {
+  font-size: 1.75em;
+  margin: 0.3em 0;
+}
+h3 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+h4 {
+  font-size: 1.25em;
+  margin: 0.6em 0;
+}
+h5 {
+  font-size: 1.15em;
+  margin: 0.65em 0;
+}
+h6 {
+  font-size: 1.5em;
+  margin: 0.5em 0;
+}
+.wrapper {
+  margin: 3em 5%;
+}
+@media screen and (max-width: 600px) {
+  .wrapper {
+    margin: 0;
+  }
+}

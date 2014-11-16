@@ -1,0 +1,24 @@
+{
+  "name": "simple-grid",
+  "version": "1.0.1",
+  "homepage": "https://github.com/owebboy/simple-grid",
+  "authors": [
+    "Oliver Pope <opope@me.com>"
+  ],
+  "description": "a grid that makes everything easier",
+  "main": "css/grid.css",
+  "keywords": [
+    "grid",
+    "css",
+    "stylus"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "stylus"
+  ]
+}

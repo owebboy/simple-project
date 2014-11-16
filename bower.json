@@ -1,0 +1,9 @@
+{
+  "name": "simple-project",
+  "version": "1.0.0",
+  "dependencies": {
+    "o-simple-grid": "latest",
+    "typographic-styles": "latest",
+    "new-buttons": "latest"
+  }
+}
