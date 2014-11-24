@@ -16,14 +16,12 @@ var gulp 								= require('gulp'),
 		prettify 						= require('gulp-prettify'),
 		autoprefixer 				= require('gulp-autoprefixer'),
 		concat 							= require('gulp-concat'),
-		del 								= require('del'),
-		vinylPaths 					= require('vinyl-paths');
+		del 								= require('del');
 
 /* destinations -------------------------------------------- */
 var stylusFile 					= './stylus/*.styl',
 		jadeFile						= './pages/*.jade',
-		dist								= './dist',
-		tmp									= './tmp';
+		dist								= './dist';
 
 /* stylus to css ------------------------------------------- */
 gulp.task('stylus', function() {
