@@ -53,4 +53,7 @@ node_modules
 
 ### Bower ###
 bower_components
-libs
+lib
+
+### SIMPLE-PROJECT ###
+dist

@@ -5,41 +5,47 @@
 
 */
 
-/* gulp and pluins ----------------------------------------- */
-var gulp 				= require('gulp'),
-		stylus 			= require('gulp-stylus'),
-		cssmin			= require('gulp-cssmin'),
-		rename			= require('gulp-rename'),
-		watch				= require('gulp-watch'),
-		webserver 	= require('gulp-webserver'),
-		jade 				= require('gulp-jade'),
-		prettify 		= require('gulp-prettify');
+/* gulp and plugins ----------------------------------------- */
+var gulp 								= require('gulp'),
+		stylus 							= require('gulp-stylus'),
+		cssmin							= require('gulp-cssmin'),
+		rename							= require('gulp-rename'),
+		watch								= require('gulp-watch'),
+		webserver 					= require('gulp-webserver'),
+		jade 								= require('gulp-jade'),
+		prettify 						= require('gulp-prettify'),
+		autoprefixer 				= require('gulp-autoprefixer'),
+		concat 							= require('gulp-concat'),
+		del 								= require('del'),
+		vinylPaths 					= require('vinyl-paths');
 
 /* destinations -------------------------------------------- */
-var stylusFile 	= './stylus/style.styl',
-		cssFile			= './css/style.css',
-		jadeFile		= './pages/*.jade';
+var stylusFile 					= './stylus/*.styl',
+		jadeFile						= './pages/*.jade',
+		dist								= './dist',
+		tmp									= './tmp';
 
 /* stylus to css ------------------------------------------- */
 gulp.task('stylus', function() {
 	gulp.src(stylusFile)
 		.pipe(stylus())
-		.pipe(gulp.dest('./css'));
-});
-
-/* compress css -------------------------------------------- */
-gulp.task('compress', function() {
-	gulp.src(cssFile)
+		.pipe(autoprefixer({
+				browsers: ['last 2 versions'],
+				cascade: true
+		}))
+		.pipe(gulp.dest(dist))
+		.pipe(concat('all.css'))
+		.pipe(gulp.dest(dist))
 		.pipe(cssmin())
 		.pipe(rename({suffix: '.min'}))
-		.pipe(gulp.dest('./css'));
+		.pipe(gulp.dest(dist));
 });
 
 /* webserver ----------------------------------------------- */
 gulp.task('webserver', function() {
 	gulp.src('./')
 		.pipe(webserver({
-			livereload: false,
+			livereload: true,
 			directoryListing: false,
 			open: true,
 			port: 9000
@@ -54,12 +60,16 @@ gulp.task('jade', function() {
 		.pipe(gulp.dest('./'));
 });
 
+/* clean build ---------------------------------------------- */
+gulp.task('clean', function (cb) {
+	del(dist, cb);
+});
+
 /* default task -------------------------------------------- */
 gulp.task('default', function() {
 	gulp.start('webserver');
 	watch(stylusFile, function(files, cb) {
 		gulp.start('stylus', cb);
-		gulp.start('compress', cb);
 	});
 	watch(jadeFile, function(files, cb) {
 		gulp.start('jade', cb);

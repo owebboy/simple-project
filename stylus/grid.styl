@@ -1,0 +1,34 @@
+/*
+
+	Simple Grid
+	owebboy
+
+*/
+
+full_width = 100
+columns = 6
+gutter = 0
+
+.container
+	width unit(full_width, '%')
+	margin auto
+	overflow hidden
+
+.responsive
+	max-width 100%
+
+for col in 1..columns
+	.col-{col}
+		width unit((col / columns - gutter / 100 * 2) * 100, '%')
+		display inline-block
+		float left
+		margin-left unit(gutter, '%')
+		margin-right unit(gutter, '%')
+
+@media screen and (max-width: 600px)
+	for col in 1..columns
+		.col-{col}
+			float none
+			display block
+			width 100%
+			margin 0

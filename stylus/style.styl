@@ -1,9 +1,14 @@
 /*
 
-	STYLUS.STYL
+	Custom Styles
 	owebboy
 	
 */
 
 p
-	line-height 1.75em
+	animation opacity 10s infinite
+	
+@keyframes opacity
+	for i in 0..10
+		{10% * i}
+			opacity (i/10) 
